@@ -1,0 +1,131 @@
+ReferenceLink
+https://www.bilibili.com/video/av11127609/
+https://cuiqingcai.com/4652.html
+
+微信公众平台
+https://mp.weixin.qq.com/
+
+账号
+./*//input[@name="account"]
+密码
+./*//input[@name="password"]
+记住我
+./*//i[@class="icon_checkbox"]
+登入
+./*//a[@class="btn_login"]
+
+取cookies列表里每个字典的name的值等于字典里的value的值
+
+查看接口参数
+响应后用debug测试
+
+搜索某个公众号post的参数
+
+action: search_biz
+token: 1105941254
+lang: zh_CN
+f: json
+ajax: 1
+random: 0.695759278066532
+query: jikexueyuan00
+begin: 0
+count: 5
+
+进入某个公众号文章列表页的参数
+
+token: 1105941254
+lang: zh_CN
+f: json
+ajax: 1
+random: 0.8664727515529571
+action: list_ex
+begin: 0
+count: 5
+query: 
+fakeid: MjM5ODE0MTM1MA==
+type: 9
+
+多了个fakeid 这是公众号的id
+
+在搜索接口搜索某公众号的url构造
+https://mp.weixin.qq.com/cgi-bin/searchbiz?
+
+token在登入后的url最后
+
+https://mp.weixin.qq.com/cgi-bin/appmsg?t=media/appmsg_edit&action=edit&type=10&isMul=1&isNew=1&share=1&lang=zh_CN&token=1105941254
+
+
+url的参数
+'action': 'search_biz',
+'token': '1105941254',
+'lang': 'zh_CN',
+'f': 'json',
+'ajax': '1',
+'random': '0.695759278066532',
+'query': 'jikexueyuan00',
+'begin': '0',
+'count': '5',
+
+获取response的fakeid
+
+
+
+点击某个公众号, 进入公众号文章列表的url构造
+https://mp.weixin.qq.com/cgi-bin/appmsg?
+
+url的参数
+'token': '1105941254',
+'lang': 'zh_CN',
+'f': 'json',
+'ajax': '1',
+'random': '0.8664727515529571',
+'action': 'list_ex',
+'begin': '0',
+'count': '5',
+'query': '',
+'fakeid': 'MjM5ODE0MTM1MA==',
+'type': '9',
+
+处理翻页
+
+可以发现begin从0开始+5递增
+'begin': '0',
+
+总文章max_num
+app_msg_cnt
+
+总文章 / 5 可知要翻多少页
+
+
+每一页的url构造
+
+url的参数
+'token': token,
+'lang': 'zh_CN',
+'f': 'json',
+'ajax': '1',
+'random': random.random(),
+'action': 'list_ex',
+'begin': '{}'.format(str(begin)),
+'count': '5',
+'query': '',
+'fakeid': fakeid,
+'type': '9'
+ 
+ 
+最终获取的内容  每篇文章的信息 
+app_msg_list下的
+
+link
+title
+update_time
+
+
+
+
+
+
+
+
+
+
