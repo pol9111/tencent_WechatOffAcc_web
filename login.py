@@ -7,7 +7,7 @@ import json
 # 登入时上传的参数
 post = {}
 url = 'https://mp.weixin.qq.com/'
-# 微信公众号, 注意不是微信个人账户
+# 微信公众号, 注意不是微信个人账号
 account = ''
 passwd = ''
 
@@ -21,9 +21,9 @@ driver.find_element_by_xpath('./*//input[@name="account"]').send_keys(account)
 driver.find_element_by_xpath('./*//input[@name="password"]').clear()
 driver.find_element_by_xpath('./*//input[@name="password"]').send_keys(passwd)
 
-# sleep(5)
 driver.find_element_by_xpath('./*//a[@class="btn_login"]').click()
 
+# 扫码登入
 sleep(10)
 driver.get(url)
 cookie_items = driver.get_cookies()
