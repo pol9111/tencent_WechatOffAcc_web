@@ -11,7 +11,7 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:53.0) Gecko/20100101 Firefox/53.0"
 }
 
-# 获取事先保存的cookies  cookies有实效, 拿不到token, 再获取一次cookies
+# 获取事先保存的cookies  cookies有时效, 拿不到token, 再获取一次cookies
 with open('cookies.txt', 'r', encoding='utf-8') as f:
     cookies_js = f.read()
 
