@@ -10,8 +10,7 @@ class Spider():
         self.appmsg_url = APPMSG_URL
         self.table = TABLE
 
-    @classmethod
-    def search_off_acc(cls):
+    def search_off_acc(self):
         # 要爬取的公众号列表
         official_acc = ['JOKER-1943']
 
@@ -37,8 +36,8 @@ class Spider():
             FAKEID = acc_lst.get('fakeid')
             return FAKEID
 
-    @classmethod
-    def enter_off_acc(cls, fakeid):
+
+    def enter_off_acc(self, fakeid):
         query_id_data = {
             'token': TOKEN,
             'lang': 'zh_CN',
@@ -61,8 +60,7 @@ class Spider():
         NUM = int(int(max_num) / 5)
         return NUM
 
-    @classmethod
-    def get_each_page(cls, fakeid, num):
+    def get_each_page(self, fakeid, num):
         begin = 0
 
         # 循环爬取某个公众号的每一页
